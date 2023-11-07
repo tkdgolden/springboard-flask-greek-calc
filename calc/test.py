@@ -6,8 +6,8 @@ class TestCalculator(unittest.TestCase):
         self.client = app.test_client(self)
 
     def test_add(self):
-        response = self.client.get('/add?a=2&b=2')
-        self.assertIn(b'4', response.data)
+        response = self.client.get('/add?a=2&b=3')
+        self.assertIn(b'5', response.data)
         self.assertEqual(response.status_code, 200)
 
     def test_subtract(self):
