@@ -4,12 +4,12 @@ from operations import add, sub, mult, div
 
 app = Flask(__name__)
 
-@app.route('/add/')
+@app.route('/add')
 def adding():
     a = int(request.args.get("a"))
     b = int(request.args.get("b"))
     result = add(a, b)
-    return f"{result}"
+    return str(result)
     
     
 @app.route('/sub')

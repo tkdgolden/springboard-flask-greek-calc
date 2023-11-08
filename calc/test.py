@@ -6,7 +6,8 @@ class TestCalculator(unittest.TestCase):
         self.client = app.test_client(self)
 
     def test_add(self):
-        response = self.client.get('/add?a=2&b=3')
+        response = self.client.get('/add?a=2&b=3', "follow_redirects=True")
+        print (response)
         self.assertIn(b'5', response.data)
         self.assertEqual(response.status_code, 200)
 
